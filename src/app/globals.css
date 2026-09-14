@@ -81,6 +81,18 @@ canvas {
   outline: none !important;
 }
 
+.dimension-label {
+  color: #baf8ff;
+  background: rgba(5, 18, 44, 0.86);
+  border: 1px solid rgba(0, 229, 255, 0.55);
+  border-radius: 3px;
+  padding: 3px 6px;
+  font: 600 10px/1 'Inter', sans-serif;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.18);
+}
+
 /* ─── Animations ───────────────────────────────────────────────────── */
 
 @keyframes fadeIn {

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GreenBuild Twin — 3D Building Digital Twin Dashboard",
+  title: "GreenBuild Twin — Architectural Digital Twin",
   description:
-    "Real-time IoT digital twin dashboard for smart building monitoring. Visualize CO₂, temperature, humidity, and power consumption in an interactive 3D room view.",
+    "Explore a glassmorphism architectural floor plan with live building telemetry, furniture volumes, and spatial dimensions.",
   keywords: ["IoT", "digital twin", "smart building", "BMS", "3D dashboard", "GreenBuild"],
 };
 

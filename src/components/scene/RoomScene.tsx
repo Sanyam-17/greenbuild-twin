@@ -8,6 +8,8 @@ import GlassWalls from "./GlassWalls";
 import FloorGrid from "./FloorGrid";
 import DoorWindowCutouts from "./DoorWindowCutouts";
 import DeviceMarker from "./DeviceMarker";
+import Furniture from "./Furniture";
+import Dimensions from "./Dimensions";
 import { useDeviceStore } from "@/store/useDeviceStore";
 
 // ─── Scene lighting ──────────────────────────────────────────────────
@@ -138,6 +140,8 @@ export default function RoomScene() {
           <CameraController />
           <FloorGrid />
           <GlassWalls ceilingVisible={ceilingVisible} />
+          <Furniture />
+          <Dimensions />
           <DoorWindowCutouts />
           <DeviceMarkers />
           <fog attach="fog" args={["#0a1128", 15, 30]} />
