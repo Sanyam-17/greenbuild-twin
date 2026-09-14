@@ -2,14 +2,14 @@
 
 import * as THREE from "three";
 
-function GlassBlock({ position, scale, color = "#77e8ff" }: { position: [number, number, number]; scale: [number, number, number]; color?: string }) {
+function GlassBlock({ position, scale, color = "#8bd8ff" }: { position: [number, number, number]; scale: [number, number, number]; color?: string }) {
   return (
     <mesh position={position} castShadow>
       <boxGeometry args={scale} />
       <meshPhysicalMaterial color={color} transparent opacity={0.48} roughness={0.18} metalness={0.28} transmission={0.55} ior={1.35} clearcoat={1} />
       <lineSegments>
         <edgesGeometry args={[new THREE.BoxGeometry(...scale)]} />
-        <lineBasicMaterial color="#9df5ff" transparent opacity={0.8} />
+        <lineBasicMaterial color="#c4b5fd" transparent opacity={0.8} />
       </lineSegments>
     </mesh>
   );
@@ -29,7 +29,7 @@ function Bed() {
 function Sofa() {
   return (
     <group position={[2.05, 0, -1.62]}>
-      <GlassBlock position={[0, 0.38, 0]} scale={[2.15, 0.35, 0.78]} color="#63d9ec" />
+      <GlassBlock position={[0, 0.38, 0]} scale={[2.15, 0.35, 0.78]} color="#68d6d0" />
       <GlassBlock position={[0, 0.92, -0.27]} scale={[2.15, 0.85, 0.22]} color="#8deaf7" />
       <GlassBlock position={[-0.96, 0.65, 0]} scale={[0.2, 0.75, 0.82]} />
       <GlassBlock position={[0.96, 0.65, 0]} scale={[0.2, 0.75, 0.82]} />
@@ -51,8 +51,8 @@ function Desk() {
 function Cabinet() {
   return (
     <group position={[-2.7, 0, 1.75]}>
-      <GlassBlock position={[0, 0.75, 0]} scale={[0.72, 1.5, 0.58]} color="#5ac9dc" />
-      {[0.1, 0.48, 0.86, 1.24].map((y) => <mesh key={y} position={[0, y, -0.31]}><boxGeometry args={[0.54, 0.025, 0.025]} /><meshBasicMaterial color="#d7fcff" /></mesh>)}
+      <GlassBlock position={[0, 0.75, 0]} scale={[0.72, 1.5, 0.58]} color="#7aa7e8" />
+      {[0.1, 0.48, 0.86, 1.24].map((y) => <mesh key={y} position={[0, y, -0.31]}><boxGeometry args={[0.54, 0.025, 0.025]} /><meshBasicMaterial color="#f6c177" /></mesh>)}
     </group>
   );
 }

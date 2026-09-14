@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-900: #0a1128;
-  --color-navy-800: #0f1b3d;
-  --color-navy-700: #162252;
-  --color-status-normal: #22c55e;
-  --color-status-warning: #f59e0b;
-  --color-status-critical: #ef4444;
-  --color-status-offline: #6b7280;
-  --color-accent-cyan: #00e5ff;
-  --color-accent-blue: #00bcd4;
+  --color-navy-900: #080d20;
+  --color-navy-800: #101936;
+  --color-navy-700: #1b2850;
+  --color-status-normal: #5eead4;
+  --color-status-warning: #f6c177;
+  --color-status-critical: #fb7185;
+  --color-status-offline: #94a3b8;
+  --color-accent-cyan: #7dd3fc;
+  --color-accent-blue: #a78bfa;
 }
 
 /* ─── Base ─────────────────────────────────────────────────────────── */
@@ -27,7 +27,7 @@ body {
   width: 100%;
   overflow: hidden;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: #0a1128;
+  background: #080d20;
   color: #e2e8f0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +36,7 @@ body {
 /* ─── Glassmorphism panel ──────────────────────────────────────────── */
 
 .glass-panel {
-  background: rgba(10, 17, 40, 0.75);
+  background: rgba(16, 25, 54, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -82,9 +82,9 @@ canvas {
 }
 
 .dimension-label {
-  color: #baf8ff;
+  color: #dbeafe;
   background: rgba(5, 18, 44, 0.86);
-  border: 1px solid rgba(0, 229, 255, 0.55);
+  border: 1px solid rgba(125, 211, 252, 0.62);
   border-radius: 3px;
   padding: 3px 6px;
   font: 600 10px/1 'Inter', sans-serif;

@@ -23,7 +23,7 @@ function WallSegment({ width, height, position, rotation }: WallSegmentProps) {
       <mesh ref={meshRef}>
         <planeGeometry args={[width, height]} />
         <meshPhysicalMaterial
-          color="#0d2856"
+          color="#263a70"
           transparent
           opacity={0.3}
           roughness={0.05}
@@ -41,7 +41,7 @@ function WallSegment({ width, height, position, rotation }: WallSegmentProps) {
         <edgesGeometry
           args={[new THREE.PlaneGeometry(width, height)]}
         />
-        <lineBasicMaterial color="#00e5ff" linewidth={2} transparent opacity={0.95} />
+        <lineBasicMaterial color="#7dd3fc" linewidth={2} transparent opacity={0.95} />
       </lineSegments>
     </group>
   );
@@ -79,7 +79,7 @@ function OpeningOutline({ width, height, position, rotation, label }: OpeningOut
             args={[new Float32Array(points.flatMap((p) => [p.x, p.y, p.z])), 3]}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#00e5ff" linewidth={2} transparent opacity={1} />
+        <lineBasicMaterial color="#7dd3fc" linewidth={2} transparent opacity={1} />
       </line>
     </group>
   );

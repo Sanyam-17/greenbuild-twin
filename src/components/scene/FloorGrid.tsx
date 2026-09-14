@@ -9,7 +9,7 @@ export default function FloorGrid() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
         <planeGeometry args={[8, 6]} />
         <meshStandardMaterial
-          color="#182236"
+          color="#202b49"
           roughness={0.25}
           metalness={0.4}
           envMapIntensity={1.2}
@@ -20,7 +20,7 @@ export default function FloorGrid() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
         <planeGeometry args={[20, 20]} />
         <meshStandardMaterial
-          color="#080d1a"
+          color="#060a16"
           roughness={0.6}
           metalness={0.2}
         />
@@ -32,10 +32,10 @@ export default function FloorGrid() {
         position={[0, 0.004, 0]}
         cellSize={0.5}
         cellThickness={0.8}
-        cellColor="#38455e"
+        cellColor="#3f5278"
         sectionSize={2}
         sectionThickness={1.5}
-        sectionColor="#506282"
+        sectionColor="#7186bd"
         fadeDistance={25}
         fadeStrength={1}
         followCamera={false}

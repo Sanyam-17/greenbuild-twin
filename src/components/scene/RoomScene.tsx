@@ -18,13 +18,13 @@ function SceneLighting() {
   return (
     <>
       {/* Soft ambient fill */}
-      <ambientLight intensity={0.25} color="#4a6fa5" />
+      <ambientLight intensity={0.32} color="#7186bd" />
 
       {/* Main directional — slightly warm, from upper-right */}
       <directionalLight
         position={[6, 8, 4]}
         intensity={0.6}
-        color="#c5d5f0"
+        color="#f1e8dc"
         castShadow={false}
       />
 
@@ -32,7 +32,7 @@ function SceneLighting() {
       <directionalLight
         position={[-5, 3, -5]}
         intensity={0.35}
-        color="#00bcd4"
+        color="#a78bfa"
       />
 
       {/* Fill from below for glass wall visibility */}
@@ -43,8 +43,8 @@ function SceneLighting() {
       />
 
       {/* Subtle point lights near walls for rim effect */}
-      <pointLight position={[-4.5, 1.5, 0]} intensity={0.3} color="#00e5ff" distance={5} decay={2} />
-      <pointLight position={[4.5, 1.5, 0]} intensity={0.3} color="#00e5ff" distance={5} decay={2} />
+      <pointLight position={[-4.5, 1.5, 0]} intensity={0.3} color="#7dd3fc" distance={5} decay={2} />
+      <pointLight position={[4.5, 1.5, 0]} intensity={0.3} color="#7dd3fc" distance={5} decay={2} />
     </>
   );
 }
@@ -130,7 +130,7 @@ export default function RoomScene() {
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.2,
         }}
-        style={{ background: "#0a1128" }}
+        style={{ background: "#080d20" }}
         onPointerMissed={() => {
           useDeviceStore.getState().selectDevice(null);
         }}
@@ -144,7 +144,7 @@ export default function RoomScene() {
           <Dimensions />
           <DoorWindowCutouts />
           <DeviceMarkers />
-          <fog attach="fog" args={["#0a1128", 15, 30]} />
+          <fog attach="fog" args={["#080d20", 15, 30]} />
         </Suspense>
       </Canvas>
     </div>
