@@ -63,6 +63,7 @@ interface DeviceStore {
   // Actions
   setViewMode: (mode: ViewMode) => void;
   toggleCeiling: () => void;
+  toggleWallsTransparency: () => void;
   selectDevice: (id: string | null) => void;
   hoverDevice: (id: string | null) => void;
 
@@ -117,6 +118,7 @@ export const useDeviceStore = create<DeviceStore>((set, get) => ({
   ui: {
     viewMode: "3d",
     ceilingVisible: false,
+    wallsTransparent: false,
     selectedDeviceId: null,
     hoveredDeviceId: null,
   },
@@ -126,6 +128,9 @@ export const useDeviceStore = create<DeviceStore>((set, get) => ({
 
   toggleCeiling: () =>
     set((s) => ({ ui: { ...s.ui, ceilingVisible: !s.ui.ceilingVisible } })),
+
+  toggleWallsTransparency: () =>
+    set((s) => ({ ui: { ...s.ui, wallsTransparent: !s.ui.wallsTransparent } })),
 
   selectDevice: (id) =>
     set((s) => ({

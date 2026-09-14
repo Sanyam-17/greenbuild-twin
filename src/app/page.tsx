@@ -7,7 +7,7 @@ import Header from "@/components/ui/Header";
 import StatPanel from "@/components/ui/StatPanel";
 import StatusLegend from "@/components/ui/StatusLegend";
 import ControlHints from "@/components/ui/ControlHints";
-import Compass, { ViewToggle, CeilingToggle } from "@/components/ui/Compass";
+import Compass, { ViewToggle, CeilingToggle, WallsTransparencyToggle } from "@/components/ui/Compass";
 
 // Dynamic import for R3F (no SSR — Three.js needs the DOM)
 const RoomScene = dynamic(() => import("@/components/scene/RoomScene"), {
@@ -62,6 +62,7 @@ export default function DashboardPage() {
       <div className="absolute bottom-5 right-5 z-20 flex flex-col items-end gap-3 animate-fade-in-delay-3">
         <Compass />
         <ViewToggle />
+        <WallsTransparencyToggle />
         <CeilingToggle />
       </div>
 

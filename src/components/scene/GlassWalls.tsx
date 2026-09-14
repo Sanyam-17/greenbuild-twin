@@ -12,9 +12,10 @@ interface WallSegmentProps {
   height: number;
   position: [number, number, number];
   rotation: [number, number, number];
+  transparentMode: boolean;
 }
 
-function WallSegment({ width, height, position, rotation }: WallSegmentProps) {
+function WallSegment({ width, height, position, rotation, transparentMode }: WallSegmentProps) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   return (
@@ -25,7 +26,7 @@ function WallSegment({ width, height, position, rotation }: WallSegmentProps) {
         <meshPhysicalMaterial
           color="#263a70"
           transparent
-          opacity={0.3}
+          opacity={transparentMode ? 0.08 : 0.3}
           roughness={0.05}
           metalness={0.2}
           side={THREE.DoubleSide}
@@ -97,7 +98,13 @@ const WINDOW_W = 1.5;
 const WINDOW_H = 1.2;
 const WINDOW_Y = 1.5; // center height of windows
 
-export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean }) {
+export default function GlassWalls({
+  ceilingVisible,
+  wallsTransparent,
+}: {
+  ceilingVisible: boolean;
+  wallsTransparent: boolean;
+}) {
   const halfW = ROOM_W / 2;
   const halfD = ROOM_D / 2;
   const halfH = ROOM_H / 2;
@@ -107,6 +114,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       {/* ── FRONT WALL (z = +halfD) — has door ────────────────────── */}
       {/* Left of door */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_W - DOOR_W) / 2}
         height={ROOM_H}
         position={[-(DOOR_W / 2 + (ROOM_W - DOOR_W) / 4), halfH, halfD]}
@@ -114,6 +122,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Right of door */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_W - DOOR_W) / 2}
         height={ROOM_H}
         position={[(DOOR_W / 2 + (ROOM_W - DOOR_W) / 4), halfH, halfD]}
@@ -121,6 +130,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Above door */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={DOOR_W}
         height={ROOM_H - DOOR_H}
         position={[0, DOOR_H + (ROOM_H - DOOR_H) / 2, halfD]}
@@ -137,6 +147,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
 
       {/* ── BACK WALL (z = -halfD) — solid ────────────────────────── */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={ROOM_W}
         height={ROOM_H}
         position={[0, halfH, -halfD]}
@@ -146,6 +157,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       {/* ── LEFT WALL (x = -halfW) — has window ──────────────────── */}
       {/* Below window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={ROOM_D}
         height={WINDOW_Y - WINDOW_H / 2}
         position={[-halfW, (WINDOW_Y - WINDOW_H / 2) / 2, 0]}
@@ -153,6 +165,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Above window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={ROOM_D}
         height={ROOM_H - (WINDOW_Y + WINDOW_H / 2)}
         position={[-halfW, (WINDOW_Y + WINDOW_H / 2) + (ROOM_H - (WINDOW_Y + WINDOW_H / 2)) / 2, 0]}
@@ -160,6 +173,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Left of window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_D - WINDOW_W) / 2}
         height={WINDOW_H}
         position={[-halfW, WINDOW_Y, -(WINDOW_W / 2 + (ROOM_D - WINDOW_W) / 4)]}
@@ -167,6 +181,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Right of window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_D - WINDOW_W) / 2}
         height={WINDOW_H}
         position={[-halfW, WINDOW_Y, (WINDOW_W / 2 + (ROOM_D - WINDOW_W) / 4)]}
@@ -184,6 +199,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       {/* ── RIGHT WALL (x = +halfW) — has window ─────────────────── */}
       {/* Below window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={ROOM_D}
         height={WINDOW_Y - WINDOW_H / 2}
         position={[halfW, (WINDOW_Y - WINDOW_H / 2) / 2, 0]}
@@ -191,6 +207,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Above window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={ROOM_D}
         height={ROOM_H - (WINDOW_Y + WINDOW_H / 2)}
         position={[halfW, (WINDOW_Y + WINDOW_H / 2) + (ROOM_H - (WINDOW_Y + WINDOW_H / 2)) / 2, 0]}
@@ -198,6 +215,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Left of window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_D - WINDOW_W) / 2}
         height={WINDOW_H}
         position={[halfW, WINDOW_Y, -(WINDOW_W / 2 + (ROOM_D - WINDOW_W) / 4)]}
@@ -205,6 +223,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       />
       {/* Right of window */}
       <WallSegment
+        transparentMode={wallsTransparent}
         width={(ROOM_D - WINDOW_W) / 2}
         height={WINDOW_H}
         position={[halfW, WINDOW_Y, (WINDOW_W / 2 + (ROOM_D - WINDOW_W) / 4)]}
@@ -222,6 +241,7 @@ export default function GlassWalls({ ceilingVisible }: { ceilingVisible: boolean
       {/* ── CEILING (toggle-able) ─────────────────────────────────── */}
       {ceilingVisible && (
         <WallSegment
+        transparentMode={wallsTransparent}
           width={ROOM_W}
           height={ROOM_D}
           position={[0, ROOM_H, 0]}

@@ -42,6 +42,7 @@ export type ViewMode = "3d" | "2d";
 export interface UIState {
   viewMode: ViewMode;
   ceilingVisible: boolean;
+  wallsTransparent: boolean;
   selectedDeviceId: string | null;
   hoveredDeviceId: string | null;
 }

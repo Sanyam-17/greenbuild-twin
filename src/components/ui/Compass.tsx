@@ -57,6 +57,25 @@ export function ViewToggle() {
   );
 }
 
+export function WallsTransparencyToggle() {
+  const wallsTransparent = useDeviceStore((s) => s.ui.wallsTransparent);
+  const toggleWallsTransparency = useDeviceStore((s) => s.toggleWallsTransparency);
+
+  return (
+    <button
+      onClick={toggleWallsTransparency}
+      aria-pressed={wallsTransparent}
+      className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${
+        wallsTransparent
+          ? "bg-accent-cyan/20 border-accent-cyan/40 text-accent-cyan"
+          : "bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10"
+      }`}
+    >
+      {wallsTransparent ? "Solid Walls" : "Transparent Walls"}
+    </button>
+  );
+}
+
 export function CeilingToggle() {
   const ceilingVisible = useDeviceStore((s) => s.ui.ceilingVisible);
   const toggleCeiling = useDeviceStore((s) => s.toggleCeiling);

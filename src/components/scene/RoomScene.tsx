@@ -115,6 +115,7 @@ function DeviceMarkers() {
 
 export default function RoomScene() {
   const ceilingVisible = useDeviceStore((s) => s.ui.ceilingVisible);
+  const wallsTransparent = useDeviceStore((s) => s.ui.wallsTransparent);
 
   return (
     <div className="absolute inset-0 z-0">
@@ -139,7 +140,7 @@ export default function RoomScene() {
           <SceneLighting />
           <CameraController />
           <FloorGrid />
-          <GlassWalls ceilingVisible={ceilingVisible} />
+          <GlassWalls ceilingVisible={ceilingVisible} wallsTransparent={wallsTransparent} />
           <Furniture />
           <Dimensions />
           <DoorWindowCutouts />
