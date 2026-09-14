@@ -1,0 +1,33 @@
+{
+  "name": "greenbuild-twin",
+  "version": "1.0.0",
+  "description": "GreenBuild Twin — 3D IoT Digital Twin Dashboard",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.185.4",
+    "autoprefixer": "^10.5.6",
+    "next": "^16.3.4",
+    "postcss": "^8.5.28",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "three": "^0.186.0",
+    "typescript": "^7.0.2",
+    "zustand": "^5.0.15"
+  }
+}

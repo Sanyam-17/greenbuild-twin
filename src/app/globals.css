@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-900: #0a1128;
+  --color-navy-800: #0f1b3d;
+  --color-navy-700: #162252;
+  --color-status-normal: #22c55e;
+  --color-status-warning: #f59e0b;
+  --color-status-critical: #ef4444;
+  --color-status-offline: #6b7280;
+  --color-accent-cyan: #00e5ff;
+  --color-accent-blue: #00bcd4;
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────── */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a1128;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Glassmorphism panel ──────────────────────────────────────────── */
+
+.glass-panel {
+  background: rgba(10, 17, 40, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 229, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 229, 255, 0.15);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 229, 255, 0.1),
+    0 0 20px rgba(0, 229, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Canvas styling ───────────────────────────────────────────────── */
+
+canvas {
+  outline: none !important;
+}
+
+/* ─── Animations ───────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px currentColor; }
+  50% { box-shadow: 0 0 12px currentColor; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fadeIn 0.5s ease-out 0.1s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeIn 0.5s ease-out 0.3s both;
+}
